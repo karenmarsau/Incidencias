@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentMenu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imageButtonAnadir"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIncidencias"
+                app:srcCompat="@drawable/add" />
+
+            <TextView
+                android:id="@+id/textViewAnadir"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Añadir Incidencia"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonAnadir" />
+
+            <ImageButton
+                android:id="@+id/imageButtonListar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="TODO"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonAnadir"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIncidencias"
+                app:srcCompat="@drawable/listar2" />
+
+            <TextView
+                android:id="@+id/textViewListar"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Listar Incidencias"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textViewAnadir"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonListar" />
+
+            <ImageButton
+                android:id="@+id/imageButtonEliminar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="TODO"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonListar"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIncidencias"
+                app:srcCompat="@drawable/eliminar" />
+
+            <TextView
+                android:id="@+id/textViewEliminar"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Eliminar Incidencia"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textViewListar"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonEliminar" />
+
+            <ImageButton
+                android:id="@+id/imageButtonAyuda"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginRight="26dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="TODO"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonEliminar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ayuda" />
+
+            <TextView
+                android:id="@+id/textViewAyuda"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Ayuda"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textViewEliminar"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonAyuda" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</FrameLayout>
