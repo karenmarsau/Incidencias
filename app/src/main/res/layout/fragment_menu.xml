@@ -26,7 +26,7 @@
                 android:scaleType="fitCenter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewIncidencias"
-                app:srcCompat="@drawable/add" />
+                app:srcCompat="@drawable/anadir" />
 
             <TextView
                 android:id="@+id/textViewAnadir"
@@ -56,7 +56,7 @@
                 android:scaleType="fitCenter"
                 app:layout_constraintStart_toEndOf="@+id/imageButtonAnadir"
                 app:layout_constraintTop_toBottomOf="@+id/textViewIncidencias"
-                app:srcCompat="@drawable/listar2" />
+                app:srcCompat="@drawable/lista" />
 
             <TextView
                 android:id="@+id/textViewListar"
@@ -105,7 +105,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageButtonEliminar" />
 
             <ImageButton
-                android:id="@+id/imageButtonAyuda"
+                android:id="@+id/imageButtonAjustes"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="40dp"
@@ -118,7 +118,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButtonEliminar"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ayuda" />
+                app:srcCompat="@drawable/ajustes" />
 
             <TextView
                 android:id="@+id/textViewAyuda"
@@ -134,7 +134,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textViewEliminar"
-                app:layout_constraintTop_toBottomOf="@+id/imageButtonAyuda" />
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonAjustes" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

@@ -78,6 +78,6 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
     }
 
     public void dropTable(SQLiteDatabase db){
-        db.execSQL("DROP TABLE IF EXISTS " + IncidenciaEntry.TABLE_NAME);
+        //db.execSQL("DELETE FROM " + IncidenciaEntry.TABLE_NAME + "WHERE ID =);
     }
 }

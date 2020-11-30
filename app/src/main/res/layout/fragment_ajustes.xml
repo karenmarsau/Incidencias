@@ -10,28 +10,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <TextView
             android:id="@+id/textView6"
             android:layout_width="412dp"
-            android:layout_height="67dp"
-            android:background="#70FFC86E"
+            android:layout_height="60dp"
+            android:background="@color/c6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtIdioma"
+            android:id="@+id/txtEliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="160dp"
-            android:layout_marginLeft="160dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
             android:gravity="center_horizontal"
             android:text="Idiomas"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,11 +40,42 @@
             android:id="@+id/imageView"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:src="@drawable/traduccion"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
-            app:layout_constraintStart_toEndOf="@+id/txtIdioma"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/txtEliminar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.54" />
+
+        <ImageButton
+            android:id="@+id/imageButtonEspanol"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="25dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/espana" />
+
+        <TextView
+            android:id="@+id/textViewAnadir"
+            android:layout_width="88dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center_horizontal"
+            android:text="E S P A Ñ O L"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonEspanol"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

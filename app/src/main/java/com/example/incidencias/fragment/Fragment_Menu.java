@@ -13,10 +13,8 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.incidencias.R;
-import com.example.incidencias.RecyclerViewAdapter;
 import com.example.incidencias.db.IncidenciaDBHelper;
 
 public class Fragment_Menu extends Fragment {
@@ -90,6 +88,21 @@ public class Fragment_Menu extends Fragment {
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
+
+            }
+        });
+
+        ImageButton imageButtonAjustes = fMenu.findViewById(R.id.imageButtonAjustes);
+        imageButtonAjustes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment fAjustes = new Fragment_Ajustes();
+                FragmentManager menuManager = getFragmentManager();
+                FragmentTransaction menuTransaction = menuManager.beginTransaction();
+
+                menuTransaction.replace(R.id.mainFragment, fAjustes);
+                menuTransaction.commit();
 
             }
         });
