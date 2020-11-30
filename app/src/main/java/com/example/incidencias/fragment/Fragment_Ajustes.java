@@ -1,4 +1,4 @@
-package com.example.incidencias;
+package com.example.incidencias.fragment;
 
 import android.os.Bundle;
 
@@ -8,17 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Fragment_Lista extends Fragment {
+import com.example.incidencias.R;
 
-    public Fragment_Lista() {
+public class Fragment_Ajustes extends Fragment {
+
+
+    public Fragment_Ajustes() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista, container, false);
+        return inflater.inflate(R.layout.fragment_ajustes, container, false);
     }
 }

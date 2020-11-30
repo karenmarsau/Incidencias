@@ -23,5 +23,8 @@ public class Menu extends AppCompatActivity {
         dbHelper = new IncidenciaDBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
 
+        //dbHelper.dropTable(db);
+        //dbHelper.onCreate(db);
+
     }
 }

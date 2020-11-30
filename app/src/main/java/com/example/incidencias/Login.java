@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
                 String txtUser = txtUserName.getText().toString();
                 String txtPass = txtPassword.getText().toString();
 
-                if(txtUser.equals("admin") && txtPass.equals("admin")){
+                if(txtUser.equals("") && txtPass.equals("")){
                     resultado.setText("Login OK");
                     goToMenu();
                 }else{

@@ -1,6 +1,5 @@
 package com.example.incidencias;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +13,11 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
     private  ArrayList<Incidencia>  lista_incidencias;
-    private Context context;
 
-    public RecyclerViewAdapter(Context con, ArrayList<Incidencia> inci){
+    public RecyclerViewAdapter( ArrayList<Incidencia> inci){
         lista_incidencias = inci ;
-        context = con;
     }
+
 
     @NonNull
     @Override
@@ -31,7 +29,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.titulo.setText(lista_incidencias.get(position).toString());
+        holder.id.setText(String.valueOf(lista_incidencias.get(position).getIdIncidencia()));
+        holder.titulo.setText(lista_incidencias.get(position).getTitulo());
+        holder.urgencia.setText(lista_incidencias.get(position).getUrgencia());
+
     }
 
     @Override
@@ -40,14 +41,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        TextView id;
         TextView titulo;
         TextView urgencia;
         ConstraintLayout layout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            titulo = itemView.findViewById(R.id.titulo);
-            urgencia = itemView.findViewById(R.id.urgencia);
+            id = itemView.findViewById(R.id.txtId);
+            titulo = itemView.findViewById(R.id.txtTitulo);
+            urgencia = itemView.findViewById(R.id.txtUrgencia);
             layout = itemView.findViewById(R.id.layout);
         }
     }

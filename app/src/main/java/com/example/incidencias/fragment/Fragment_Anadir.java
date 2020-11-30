@@ -1,12 +1,10 @@
-package com.example.incidencias;
+package com.example.incidencias.fragment;
 
-import android.content.Context;
+import android.app.AlertDialog;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,30 +15,29 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.incidencias.Incidencia;
+import com.example.incidencias.Menu;
+import com.example.incidencias.R;
 import com.example.incidencias.db.IncidenciaDBHelper;
 
-import java.util.ArrayList;
 
+public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelectedListener {
 
-public class Add_Incidencia extends Fragment implements AdapterView.OnItemSelectedListener {
-
-    public Add_Incidencia() {
+    public Fragment_Anadir() {
         // Required empty public constructor
     }
 
-    ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
+    //ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View fAnadir = inflater.inflate(R.layout.fragment_add_incidencias, container, false);
+        View fAnadir = inflater.inflate(R.layout.fragment_anadir, container, false);
 
         final EditText editTextTitulo = fAnadir.findViewById(R.id.EdtTitulo);
-        final EditText lista = fAnadir.findViewById(R.id.txtLista);
 
         final Spinner spinner = fAnadir.findViewById(R.id.spinnerUrgencia);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getContext(),R.array.urgencia, android.R.layout.simple_spinner_item);
@@ -62,7 +59,7 @@ public class Add_Incidencia extends Fragment implements AdapterView.OnItemSelect
                     toast.show();
                 }else{
                     Incidencia nuevaIncidencia = new Incidencia(EdtTitulo, SpinnerUrgencia);
-                    incidencias.add(nuevaIncidencia);
+                    //incidencias.add(nuevaIncidencia);
 
                     IncidenciaDBHelper dbHelper = ((Menu)getActivity()).dbHelper;
                     SQLiteDatabase db = ((Menu)getActivity()).db;
@@ -70,17 +67,14 @@ public class Add_Incidencia extends Fragment implements AdapterView.OnItemSelect
 
                     Log.i("Click!!!", EdtTitulo+"--"+SpinnerUrgencia);
 
-                    String resultados = "";
-                    for (int i = 0; i < incidencias.size(); i++)
-                        if(i + 1 < incidencias.size())
-                            resultados += incidencias.get(i) + " | ";
-                        else
-                            resultados += incidencias.get(i);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("Creación de Incidencia");
+                    builder.setMessage("Su incidencia ha sido registrada.");
+                    builder.setPositiveButton("Aceptar", null);
 
-                    lista.setText(resultados);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
                 }
-
-
             }
 
         });

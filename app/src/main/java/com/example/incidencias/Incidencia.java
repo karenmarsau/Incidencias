@@ -8,14 +8,17 @@ public class Incidencia extends Fragment {
 
     private String titulo;
     private String urgencia;
+    private int id;
 
     public Incidencia(String titulo, String urgencia) {
         this.titulo = titulo;
         this.urgencia = urgencia;
     }
 
-    public Incidencia() {
-
+    public Incidencia(String titulo, String urgencia, int id) {
+        this.titulo = titulo;
+        this.urgencia = urgencia;
+        this.id = id;
     }
 
     public String getTitulo() {
@@ -32,5 +35,13 @@ public class Incidencia extends Fragment {
 
     public void setUrgencia(String urgencia) {
         this.urgencia = urgencia;
+    }
+
+    public int getIdIncidencia() {
+        return id;
+    }
+
+    public void setIdIncidencia(int id) {
+        this.id = id;
     }
 }
