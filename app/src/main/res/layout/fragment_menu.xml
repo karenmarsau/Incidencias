@@ -128,7 +128,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
-                android:text="Ayuda"
+                android:text="Ajustes"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="14sp"

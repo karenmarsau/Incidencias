@@ -29,16 +29,12 @@ public class Fragment_Eliminar extends Fragment {
         View fEliminar = inflater.inflate(R.layout.fragment_eliminar, container, false);
 
 
-        final ImageButton btnEliminar = fEliminar.findViewById(R.id.imageButtonEliminar);
-        btnEliminar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage("¿Estas seguro que deseas eliminar todo?").setTitle("ALERTA");
-                AlertDialog dialog = builder.create();
-                builder.setPositiveButton("Aceptar", null);
-                dialog.show();
-            }
-        });
+//        ImageButton btnEliminar = fEliminar.findViewById(R.id.imageButtonEliminar);
+//        btnEliminar.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         return fEliminar;
     }

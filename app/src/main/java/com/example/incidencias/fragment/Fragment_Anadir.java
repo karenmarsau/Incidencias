@@ -68,10 +68,8 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
                     Log.i("Click!!!", EdtTitulo+"--"+SpinnerUrgencia);
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("Creación de Incidencia");
-                    builder.setMessage("Su incidencia ha sido registrada.");
+                    builder.setTitle("Creación de Incidencia").setMessage("Su incidencia ha sido registrada.");
                     builder.setPositiveButton("Aceptar", null);
-
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }

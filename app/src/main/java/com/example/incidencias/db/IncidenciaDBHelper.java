@@ -45,7 +45,9 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
-                issue = new Incidencia(cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_TITLE)), cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_PRIORITY)), cursor.getInt(cursor.getColumnIndex(IncidenciaEntry.ID)));
+                issue = new Incidencia(cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_TITLE)),
+                                    cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_PRIORITY)),
+                                    cursor.getInt(cursor.getColumnIndex(IncidenciaEntry.ID)));
                 issueArrayList.add(issue);
             } while(cursor.moveToNext());
         }
