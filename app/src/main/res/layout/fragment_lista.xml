@@ -15,10 +15,11 @@
             android:id="@+id/recyclerView"
             android:layout_width="350dp"
             android:layout_height="400dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/txtBackground" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
