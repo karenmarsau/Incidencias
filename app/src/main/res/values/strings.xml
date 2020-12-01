@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Incidencias</string>
-
     <string-array name="urgencia">
         <item>Alta</item>
         <item>Mediana</item>

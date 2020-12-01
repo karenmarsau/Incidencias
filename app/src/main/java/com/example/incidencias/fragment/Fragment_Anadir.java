@@ -46,7 +46,7 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
         spinner.setOnItemSelectedListener(this);
 
 
-        final Button btnAnadir = fAnadir.findViewById(R.id.btnAnadir);
+        final Button btnAnadir = fAnadir.findViewById(R.id.btnEliminar);
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 

@@ -65,30 +65,12 @@ public class Fragment_Menu extends Fragment {
         imageButtonEliminar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Fragment fEliminarIncidencias = new Fragment_Lista();
+                Fragment fEliminarIncidencias = new Fragment_Eliminar();
                 FragmentManager menuManager = getFragmentManager();
                 FragmentTransaction menuTransaction = menuManager.beginTransaction();
 
                 menuTransaction.replace(R.id.mainFragment, fEliminarIncidencias);
                 menuTransaction.commit();
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage("¿Estas seguro que deseas eliminar todo?").setTitle("ALERTA");
-                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dbHelper.dropTable(db);
-                        Toast toast = Toast.makeText(getActivity(),"Eliminado correctamente.",Toast.LENGTH_SHORT);
-                        toast.setMargin(1000,500);
-                        toast.show();
-                    }
-                });
-
-                builder.setNegativeButton("Cancelar", null);
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
-
             }
         });
 
