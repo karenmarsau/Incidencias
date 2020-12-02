@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Login-->
+    <string name = "incidents">Incidencias</string>
+
+    <!--Menu-->
+    <string name = "addInci">Añadir Incidencias</string>
+    <string name = "listInci">Listar Incidencias</string>
+    <string name = "delInci">Eliminar Incidencias</string>
+    <string name = "settings">Ajustes</string>
+
+    <!--Add Incidents-->
+    <string name = "add_bar">Añadir</string>
+    <string name = "add_tittle">Titulo</string>
+    <string name = "add_urgency">Urgencia</string>
+    <string name = "add_button">Confirmar</string>
+
+    <!--List Incidents-->
+    <string name = "list_bar">Listar</string>
+
+    <!--Delete Incidents-->
+    <string name = "delete_bar">Eliminar</string>
+    <string name = "delete_insertID">ID para eliminar:</string>
+    <string name = "delete_button">Confirmar</string>
+
+    <!--Settings-->
+    <string name = "setting_bar">Ajustes</string>
+
+</resources>

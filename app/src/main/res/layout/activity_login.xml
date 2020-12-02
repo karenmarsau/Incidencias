@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="Incidencias"
+        android:text="@string/incidents"
         android:textColor="#718799"
         android:textSize="24sp"
         android:textStyle="bold"

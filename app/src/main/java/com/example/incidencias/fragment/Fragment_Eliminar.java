@@ -2,6 +2,7 @@ package com.example.incidencias.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,12 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.incidencias.R;
+import com.example.incidencias.db.IncidenciaDBHelper;
 
 public class Fragment_Eliminar extends Fragment {
-
+    public IncidenciaDBHelper dbHelper;
+    public SQLiteDatabase db;
 
     public Fragment_Eliminar() {
         // Required empty public constructor
@@ -25,10 +29,14 @@ public class Fragment_Eliminar extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fEliminar = inflater.inflate(R.layout.fragment_eliminar, container, false);
+        final EditText editTextID = fEliminar.findViewById(R.id.edtId);
 
         final Button btnEliminar = fEliminar.findViewById(R.id.btnEliminar);
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                String edtId = editTextID.getText().toString();
+                dbHelper.dropTable(db);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setMessage("¿Estas seguro que deseas eliminar todo?").setTitle("ALERTA");
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {

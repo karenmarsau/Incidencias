@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.incidencias.Menu;
 import com.example.incidencias.R;
 import com.example.incidencias.RecyclerViewAdapter;
 import com.example.incidencias.db.IncidenciaDBHelper;
@@ -35,7 +34,7 @@ public class Fragment_Lista extends Fragment {
         db = dbHelper.getWritableDatabase();
 
         RecyclerView recyclerView = fListar.findViewById(R.id.recyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(IncidenciaDBHelper.getAllIssues(db));
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(IncidenciaDBHelper.getAllIncidents(db));
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager((fListar.getContext())));
 

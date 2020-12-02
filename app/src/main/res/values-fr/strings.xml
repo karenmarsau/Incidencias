@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Login-->
+    <string name="incidents">Incidents</string>
+
+    <!--Menu-->
+    <string name = "addInci">Ajouter des incidents</string>
+    <string name = "listInci">Répertorier les incidents</string>
+    <string name = "delInci">Éliminer les incidents</string>
+    <string name = "settings">Réglages</string>
+
+    <!--Add Incidents-->
+    <string name = "add_bar">Ajouter</string>
+    <string name = "add_tittle">Titre</string>
+    <string name = "add_urgency">Urgence</string>
+    <string name = "add_button">Confirmer</string>
+
+    <!--List Incidents-->
+    <string name = "list_bar">List</string>
+
+    <!--Delete Incidents-->
+    <string name = "delete_bar">Retirer</string>
+    <string name = "delete_insertID">ID à supprimer:</string>
+    <string name = "delete_button">Confirmer</string>
+
+    <!--Settings-->
+    <string name = "setting_bar">Langues</string>
+
+</resources>
