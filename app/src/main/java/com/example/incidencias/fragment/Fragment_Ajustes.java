@@ -1,9 +1,14 @@
 package com.example.incidencias.fragment;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +16,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.content.res.Resources;
 
+import com.example.incidencias.Login;
 import com.example.incidencias.R;
 
 import java.util.Locale;
 
 public class Fragment_Ajustes extends Fragment {
     private Locale myLocale;
-
+    protected static SharedPreferences sharedPref;
 
     public Fragment_Ajustes() {
         // Required empty public constructor
@@ -28,28 +34,60 @@ public class Fragment_Ajustes extends Fragment {
                              Bundle savedInstanceState) {
         View fAjustes = inflater.inflate(R.layout.fragment_ajustes, container, false);
 
-        ImageButton imageButtonEspanol = fAjustes.findViewById(R.id.imageButtonAnadir);
+        sharedPref = getContext().getSharedPreferences("APP_SETTINGS", Context.MODE_PRIVATE);
+
+        ImageButton imageButtonEspanol = fAjustes.findViewById(R.id.imageButtonEspanol);
         imageButtonEspanol.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                changeLanguage("es",this.getRessources());
+                changeLanguage("es");
+            }
+        });
+
+        ImageButton imageButtonIngles = fAjustes.findViewById(R.id.imageButtonIngles);
+        imageButtonIngles.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                changeLanguage("en");
+            }
+        });
+
+        ImageButton imageButtonFrances = fAjustes.findViewById(R.id.imageButtonFrances);
+        imageButtonFrances.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                changeLanguage("fr");
             }
         });
 
         return fAjustes;
     }
 
-    public void changeLanguage(String language, Resources res){
-        Configuration config = new Configuration(res.getConfiguration());
+    public void changeLanguage(String language){
+        Configuration config = new Configuration(getResources().getConfiguration());
+        config.locale = new Locale(language);
 
         switch (language) {
             case "es":
-                config.language = new Locale("es");
+                config.locale = new Locale("es");
+                break;
             case "en":
-                config.language = Locale.ENGLISH;
+                config.locale = Locale.ENGLISH;
+                break;
             case "fr":
-                config.language = Locale.FRENCH;
+                config.locale = Locale.FRENCH;
                 break;
         }
-        res.updateConfiguration(config, res.getDisplayMetrics());
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        refresh();
     }
+
+    public void refresh(){
+        Intent intent = new Intent(getContext(), Login.class);
+        startActivity(intent);
+
+        Fragment fragmentSettings = new Fragment_Ajustes();
+
+        FragmentManager menuManager = getFragmentManager();
+        FragmentTransaction menuTransaction = menuManager.beginTransaction();
+        menuTransaction.replace(R.id.mainFragment, fragmentSettings).commit();
+    }
+
 }

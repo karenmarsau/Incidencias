@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Incidencias</string>
+
+    <string-array name="urgencia">
+        <item>Alta</item>
+        <item>Mediana</item>
+        <item>Baja</item>
+    </string-array>
 
     <!--Login-->
     <string name = "incidents">Incidencias</string>
@@ -26,5 +33,8 @@
 
     <!--Settings-->
     <string name = "setting_bar">Ajustes</string>
+    <string name = "set_spanish">Español</string>
+    <string name = "set_english">Inglés</string>
+    <string name = "set_french">Francés</string>
 
 </resources>

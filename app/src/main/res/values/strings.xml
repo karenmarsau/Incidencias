@@ -1,19 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Incidencias</string>
+
     <string-array name="urgencia">
         <item>Alta</item>
         <item>Mediana</item>
         <item>Baja</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main2">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <!--Languages -->
+
+    <!--Login-->
+    <string name = "incidents">Incidencias</string>
+
+    <!--Menu-->
+    <string name = "addInci">Añadir Incidencias</string>
+    <string name = "listInci">Listar Incidencias</string>
+    <string name = "delInci">Eliminar Incidencias</string>
+    <string name = "settings">Ajustes</string>
+
+    <!--Add Incidents-->
+    <string name = "add_bar">Añadir</string>
+    <string name = "add_tittle">Titulo</string>
+    <string name = "add_urgency">Urgencia</string>
+    <string name = "add_button">Confirmar</string>
+
+    <!--List Incidents-->
+    <string name = "list_bar">Listar</string>
+
+    <!--Delete Incidents-->
+    <string name = "delete_bar">Eliminar</string>
+    <string name = "delete_insertID">ID para eliminar:</string>
+    <string name = "delete_button">Confirmar</string>
+
+    <!--Settings-->
+    <string name = "setting_bar">Ajustes</string>
+    <string name = "set_spanish">Español</string>
+    <string name = "set_english">Inglés</string>
+    <string name = "set_french">Francés</string>
+
 </resources>

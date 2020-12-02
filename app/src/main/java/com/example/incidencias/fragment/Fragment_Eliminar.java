@@ -35,8 +35,8 @@ public class Fragment_Eliminar extends Fragment {
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                String edtId = editTextID.getText().toString();
-                dbHelper.dropTable(db);
+                String edtId = editTextID.getText().();
+                dbHelper.dropIncidence(db, edtId);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setMessage("¿Estas seguro que deseas eliminar todo?").setTitle("ALERTA");
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {

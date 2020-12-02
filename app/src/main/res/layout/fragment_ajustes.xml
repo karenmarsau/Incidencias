@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:gravity="center_horizontal"
-            android:text="Idiomas"
+            android:text="@string/setting_bar"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -62,13 +62,26 @@
             app:layout_constraintTop_toBottomOf="@+id/imageButtonEspanol"
             app:srcCompat="@drawable/usa" />
 
+        <ImageButton
+            android:id="@+id/imageButtonFrances"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="30dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonIngles"
+            app:srcCompat="@drawable/francia" />
+
         <TextView
             android:id="@+id/txtEspanol"
             android:layout_width="88dp"
             android:layout_height="25dp"
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="35dp"
             android:gravity="center_horizontal"
             android:text="E S P A Ñ O L"
             android:textAlignment="center"
@@ -84,8 +97,7 @@
             android:layout_height="25dp"
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="50dp"
-            android:gravity="center_horizontal"
+            android:layout_marginTop="58dp"
             android:text="I N G L É S"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -93,6 +105,21 @@
             android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/imageButtonIngles"
             app:layout_constraintTop_toBottomOf="@+id/txtEspanol" />
+
+        <TextView
+            android:id="@+id/txtFrances"
+            android:layout_width="88dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="55dp"
+            android:text="F R A N C E S"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonFrances"
+            app:layout_constraintTop_toBottomOf="@+id/txtIngles" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
