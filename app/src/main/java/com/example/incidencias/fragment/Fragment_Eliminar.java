@@ -35,23 +35,31 @@ public class Fragment_Eliminar extends Fragment {
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                String edtId = editTextID.getText().();
-                dbHelper.dropIncidence(db, edtId);
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage("¿Estas seguro que deseas eliminar todo?").setTitle("ALERTA");
-                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast toast = Toast.makeText(getActivity(), "Eliminado correctamente.", Toast.LENGTH_SHORT);
-                        toast.setMargin(1000, 500);
-                        toast.show();
-                    }
-                });
+                final int edtId = Integer.parseInt(editTextID.getText().toString());
 
-                builder.setNegativeButton("Cancelar", null);
+                if(editTextID.equals("")){
+                    Toast toast = Toast.makeText(getActivity(),"ERROR, campo vacio.",Toast.LENGTH_SHORT);
+                    toast.setMargin(1000,500);
+                    toast.show();
+                }else{
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("¿Estas seguro que deseas eliminar todo?").setTitle("ALERTA");
+                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dbHelper.dropIncidence(db, edtId);
+                            Toast toast = Toast.makeText(getActivity(), "Eliminado correctamente.", Toast.LENGTH_SHORT);
+                            toast.setMargin(1000, 500);
+                            toast.show();
+                        }
+                    });
 
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                    builder.setNegativeButton("Cancelar", null);
+
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+
             }
         });
 
