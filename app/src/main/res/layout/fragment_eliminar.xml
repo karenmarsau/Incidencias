@@ -58,9 +58,9 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="id"
-            android:inputType="textPersonName"
-            android:textSize="10sp"
+            android:hint="ID"
+            android:inputType="number"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDelete" />
 

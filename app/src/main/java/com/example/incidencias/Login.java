@@ -14,14 +14,15 @@ import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
 
-        if (sharedPreferences.getBoolean("STORED_USER", false)) {
+        if (sharedPreferences.getBoolean("save_user", false)) {
             goToMenu();
         }
 
@@ -43,10 +44,10 @@ public class Login extends AppCompatActivity {
 
                 if(txtUser.equals("admin") && txtPass.equals("admin")){
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("user_name", txtUser);
-                    editor.putString("user_password", txtPass);
+                    editor.putString("user_name", txtUser).commit();
+                    editor.putString("user_password", txtPass).commit();
+                    editor.putBoolean("save_user", true).commit();
                     resultado.setText("Login OK");
-
                     goToMenu();
                 }else{
                     resultado.setText("Login KO");

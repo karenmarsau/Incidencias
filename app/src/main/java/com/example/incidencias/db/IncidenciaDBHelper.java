@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class IncidenciaDBHelper extends SQLiteOpenHelper {
 
+
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + IncidenciaEntry.TABLE_NAME + "(" +
             IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             IncidenciaEntry.COLUMN_NAME_TITLE + " TEXT," + IncidenciaEntry.COLUMN_NAME_PRIORITY + " TEXT)";
@@ -83,5 +84,20 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
 
     public void dropIncidence(SQLiteDatabase db, int id){
         db.execSQL("DELETE FROM " + IncidenciaEntry.TABLE_NAME + " WHERE " + IncidenciaEntry.ID + " = " + id);
+    }
+
+    public static boolean findIfExists(SQLiteDatabase db){
+        String sql ="SELECT * FROM " + IncidenciaEntry.TABLE_NAME;
+        Cursor cursor= db.rawQuery(sql,null);
+
+        Log.i("Cursor Count : ", String.valueOf(cursor.getCount()));
+
+        if(cursor.getCount() > 0 && cursor != null){
+            cursor.close();
+            return false;
+        }else{
+            cursor.close();
+            return true;
+        }
     }
 }
