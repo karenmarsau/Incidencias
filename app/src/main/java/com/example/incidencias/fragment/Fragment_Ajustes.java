@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.content.res.Resources;
 
 import com.example.incidencias.Login;
 import com.example.incidencias.R;
@@ -23,7 +23,7 @@ import java.util.Locale;
 
 public class Fragment_Ajustes extends Fragment {
     private Locale myLocale;
-    protected static SharedPreferences sharedPref;
+    protected static SharedPreferences sharedPreferences;
 
     public Fragment_Ajustes() {
         // Required empty public constructor
@@ -34,7 +34,7 @@ public class Fragment_Ajustes extends Fragment {
                              Bundle savedInstanceState) {
         View fAjustes = inflater.inflate(R.layout.fragment_ajustes, container, false);
 
-        sharedPref = getContext().getSharedPreferences("APP_SETTINGS", Context.MODE_PRIVATE);
+        sharedPreferences = getContext().getSharedPreferences("APP_SETTINGS", Context.MODE_PRIVATE);
 
         ImageButton imageButtonEspanol = fAjustes.findViewById(R.id.imageButtonEspanol);
         imageButtonEspanol.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +54,17 @@ public class Fragment_Ajustes extends Fragment {
         imageButtonFrances.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 changeLanguage("fr");
+            }
+        });
+
+        Button deleteAll = fAjustes.findViewById(R.id.btnDeleteAll);
+        deleteAll.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                sharedPreferences.edit().remove("language").commit();
+                sharedPreferences.edit().remove("save_user").commit();
+                sharedPreferences.edit().remove("user_name").commit();
+                sharedPreferences.edit().remove("user_password").commit();
+                refresh();
             }
         });
 
@@ -78,6 +89,7 @@ public class Fragment_Ajustes extends Fragment {
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
         refresh();
     }
+
 
     public void refresh(){
         Intent intent = new Intent(getContext(), Login.class);

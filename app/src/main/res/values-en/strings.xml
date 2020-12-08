@@ -24,6 +24,11 @@
 
     <!--List Incidents-->
     <string name = "list_bar">List</string>
+    <string name = "list_id">Id</string>
+    <string name = "list_tittle">Tittle</string>
+    <string name = "list_urgency">Urgency</string>
+    <string name = "list_status">Status</string>
+
 
     <!--Delete Incidents-->
     <string name = "delete_bar">Delete</string>
@@ -35,5 +40,6 @@
     <string name = "set_spanish">Spanish</string>
     <string name = "set_english">English</string>
     <string name = "set_french">French</string>
+    <string name = "reset">Reset preferences</string>
 
 </resources>

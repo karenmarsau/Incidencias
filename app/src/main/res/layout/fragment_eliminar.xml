@@ -8,12 +8,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="288dp">
+        android:layout_height="300dp">
 
         <TextView
             android:id="@+id/txtBackground"
             android:layout_width="412dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@color/c6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -24,12 +24,12 @@
             android:id="@+id/txtAnadir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/manjari_bold"
             android:gravity="center_horizontal"
             android:text="@string/delete_bar"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtBackground"
             app:layout_constraintEnd_toEndOf="@+id/txtBackground"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,21 +43,22 @@
             android:layout_marginStart="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="50dp"
+            android:fontFamily="@font/manjari_regular"
             android:text="@string/delete_insertID"
             android:textColor="#000000"
             android:textSize="18sp"
-            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtBackground" />
 
         <EditText
             android:id="@+id/edtId"
             android:layout_width="326dp"
-            android:layout_height="33dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
             android:ems="10"
+            android:fontFamily="@font/manjari_regular"
             android:hint="ID"
             android:inputType="number"
             android:textSize="12sp"
@@ -66,16 +67,15 @@
 
         <Button
             android:id="@+id/btnEliminar"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/mybutton"
             android:fontFamily="@font/rubik_medium"
-            android:inputType="number"
             android:text="@string/delete_button"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtId" />

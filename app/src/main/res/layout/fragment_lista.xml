@@ -11,10 +11,66 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBackground">
+
+            <TextView
+                android:id="@+id/txtIdList"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/manjari_regular"
+                android:gravity="center"
+                android:text="@string/list_id"
+                android:textColor="@color/c7"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtTittleList"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/manjari_regular"
+                android:gravity="center"
+                android:text="@string/list_tittle"
+                android:textColor="@color/c7"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtPriorityList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/manjari_regular"
+                android:gravity="center"
+                android:text="@string/list_urgency"
+                android:textColor="@color/c7"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtStatusList"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/manjari_regular"
+                android:gravity="center"
+                android:text="@string/list_status"
+                android:textColor="@color/c7"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/txtBackground"
             android:layout_width="412dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@color/c6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -30,7 +86,7 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/manjari_bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtBackground"
             app:layout_constraintEnd_toEndOf="@+id/txtBackground"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +97,10 @@
             android:id="@+id/recyclerView"
             android:layout_width="350dp"
             android:layout_height="380dp"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtBackground" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

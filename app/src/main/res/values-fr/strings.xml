@@ -25,6 +25,11 @@
 
     <!--List Incidents-->
     <string name = "list_bar">List</string>
+    <string name = "list_id">Id</string>
+    <string name = "list_tittle">Titre</string>
+    <string name = "list_urgency">Urgence</string>
+    <string name = "list_status">Etat</string>
+
 
     <!--Delete Incidents-->
     <string name = "delete_bar">Retirer</string>
@@ -32,9 +37,10 @@
     <string name = "delete_button">Confirmer</string>
 
     <!--Settings-->
-    <string name = "setting_bar">Langues</string>
+    <string name = "setting_bar">Réglages</string>
     <string name = "set_spanish">Espagnol</string>
     <string name = "set_english">Anglais</string>
     <string name = "set_french">Français</string>
+    <string name = "reset">Réinitialiser par défaut</string>
 
 </resources>

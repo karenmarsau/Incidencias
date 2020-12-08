@@ -13,7 +13,7 @@
         <TextView
             android:id="@+id/txtBackground"
             android:layout_width="412dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@color/c6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -29,7 +29,7 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/manjari_bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtBackground"
             app:layout_constraintEnd_toEndOf="@+id/txtBackground"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,12 +82,13 @@
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="35dp"
-            android:gravity="center_horizontal"
-            android:text="E S P A Ñ O L"
+            android:fontFamily="@font/manjari_thin"
+            android:gravity="center"
+            android:text="@string/set_spanish"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="#000000"
             android:textSize="14sp"
-            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/imageButtonEspanol"
             app:layout_constraintTop_toBottomOf="@+id/txtBackground" />
 
@@ -98,11 +99,13 @@
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="58dp"
-            android:text="I N G L É S"
+            android:fontFamily="@font/manjari_thin"
+            android:gravity="center"
+            android:text="@string/set_english"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="#000000"
             android:textSize="14sp"
-            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/imageButtonIngles"
             app:layout_constraintTop_toBottomOf="@+id/txtEspanol" />
 
@@ -113,13 +116,32 @@
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="55dp"
-            android:text="F R A N C E S"
+            android:fontFamily="@font/manjari_thin"
+            android:gravity="center"
+            android:text="@string/set_french"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="#000000"
             android:textSize="14sp"
-            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/imageButtonFrances"
             app:layout_constraintTop_toBottomOf="@+id/txtIngles" />
+
+        <Button
+            android:id="@+id/btnDeleteAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/mybutton"
+            android:fontFamily="@font/manjari_bold"
+            android:gravity="center"
+            android:text="@string/reset"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonFrances" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

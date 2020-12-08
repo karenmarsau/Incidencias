@@ -20,7 +20,7 @@
         android:textColor="#000000"
         android:textIsSelectable="false"
         android:textSize="30sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/manjari_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
