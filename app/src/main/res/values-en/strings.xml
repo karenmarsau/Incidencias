@@ -42,4 +42,10 @@
     <string name = "set_french">French</string>
     <string name = "reset">Reset preferences</string>
 
+    <!--Description-->
+    <string name="desc_bar">Description</string>
+    <string name="desc_tittle">Tittle</string>
+    <string name="desc_date">Date</string>
+    <string name="desc_info">Description</string>
+
 </resources>

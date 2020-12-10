@@ -83,7 +83,7 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
     }
 
     public void dropIncidence(SQLiteDatabase db, int id){
-        db.execSQL("DELETE FROM " + IncidenciaEntry.TABLE_NAME + " WHERE " + IncidenciaEntry.ID + " = " + id);
+        db.execSQL("DELETE FROM " + IncidenciaEntry.TABLE_NAME + " WHERE id = " + id);
     }
 
     public static boolean findIfExists(SQLiteDatabase db){

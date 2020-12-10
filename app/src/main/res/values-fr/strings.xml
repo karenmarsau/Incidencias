@@ -43,4 +43,11 @@
     <string name = "set_french">Français</string>
     <string name = "reset">Réinitialiser par défaut</string>
 
+    <!--Description-->
+    <string name="desc_bar">La description</string>
+    <string name="desc_tittle">Titre</string>
+    <string name="desc_date">Date</string>
+    <string name="desc_info">Description</string>
+
+
 </resources>

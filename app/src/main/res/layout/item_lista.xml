@@ -16,6 +16,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageButtonStatus"
+            android:layout_width="40dp"
+            android:layout_height="23dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/red_dot" />
+
         <TextView
             android:id="@+id/txtId"
             android:layout_width="40dp"
@@ -49,14 +58,13 @@
             android:textColor="@color/c7"
             android:textSize="16sp" />
 
-        <ImageButton
-            android:id="@+id/imageButtonStatus"
-            android:layout_width="40dp"
+        <Button
+            android:id="@+id/btnEliminarRec"
+            android:layout_width="30dp"
             android:layout_height="23dp"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/red_dot" />
+            android:background="@drawable/mybutton"
+            android:text="x" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
