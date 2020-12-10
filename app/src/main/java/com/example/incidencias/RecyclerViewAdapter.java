@@ -6,8 +6,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.incidencias.fragment.Fragment_Descripcion;
 
 import java.util.ArrayList;
 
@@ -32,6 +35,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.id.setText(String.valueOf(lista_incidencias.get(position).getIdIncidencia()));
         holder.titulo.setText(lista_incidencias.get(position).getTitulo());
         holder.urgencia.setText(lista_incidencias.get(position).getUrgencia());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity)v.getContext();
+                Fragment_Descripcion descripcion = new Fragment_Descripcion();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutList).addToBackStack();
+            }
+        });
 
     }
 

@@ -9,38 +9,40 @@
     </string-array>
 
     <!--Login-->
-    <string name = "incidents">Incidencias</string>
+    <string name="incidents">Incidencias</string>
 
     <!--Menu-->
-    <string name = "addInci">Añadir Incidencias</string>
-    <string name = "listInci">Listar Incidencias</string>
-    <string name = "delInci">Eliminar Incidencias</string>
-    <string name = "settings">Ajustes</string>
+    <string name="addInci">Añadir Incidencias</string>
+    <string name="listInci">Listar Incidencias</string>
+    <string name="delInci">Eliminar Incidencias</string>
+    <string name="settings">Ajustes</string>
 
     <!--Add Incidents-->
-    <string name = "add_bar">Añadir</string>
-    <string name = "add_tittle">Titulo</string>
-    <string name = "add_urgency">Urgencia</string>
-    <string name = "add_button">Confirmar</string>
+    <string name="add_bar">Añadir</string>
+    <string name="add_tittle">Titulo</string>
+    <string name="add_urgency">Urgencia</string>
+    <string name="add_button">Confirmar</string>
 
     <!--List Incidents-->
-    <string name = "list_bar">Listar</string>
-    <string name = "list_id">Id</string>
-    <string name = "list_tittle">Titulo</string>
-    <string name = "list_urgency">Urgencia</string>
-    <string name = "list_status">Estado</string>
+    <string name="list_bar">Listar</string>
+    <string name="list_id">Id</string>
+    <string name="list_tittle">Titulo</string>
+    <string name="list_urgency">Urgencia</string>
+    <string name="list_status">Estado</string>
 
 
     <!--Delete Incidents-->
-    <string name = "delete_bar">Eliminar</string>
-    <string name = "delete_insertID">ID para eliminar:</string>
-    <string name = "delete_button">Confirmar</string>
+    <string name="delete_bar">Eliminar</string>
+    <string name="delete_insertID">ID para eliminar:</string>
+    <string name="delete_button">Confirmar</string>
 
     <!--Settings-->
-    <string name = "setting_bar">Ajustes</string>
-    <string name = "set_spanish">Español</string>
-    <string name = "set_english">Inglés</string>
-    <string name = "set_french">Francés</string>
-    <string name = "reset">Restablecer preferencias</string>
+    <string name="setting_bar">Ajustes</string>
+    <string name="set_spanish">Español</string>
+    <string name="set_english">Inglés</string>
+    <string name="set_french">Francés</string>
+    <string name="reset">Restablecer preferencias</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
