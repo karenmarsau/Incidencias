@@ -35,7 +35,7 @@ public class Fragment_Descripcion extends Fragment {
         titulo = fDescripcion.findViewById(R.id.txtTituloD);
         fecha = fDescripcion.findViewById(R.id.txtFechaD);
         urgencia = fDescripcion.findViewById(R.id.txtUrgenciaD);
-        //descripcion = fDescripcion.findViewById(R.id.txtDescD);
+        descripcion = fDescripcion.findViewById(R.id.txtDescD);
 
         //String txtTitulo = titulo.setText(incidencia.getTitulo());
 

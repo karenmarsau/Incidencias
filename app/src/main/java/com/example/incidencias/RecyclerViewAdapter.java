@@ -1,8 +1,10 @@
 package com.example.incidencias;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.id.setText(String.valueOf(lista_incidencias.get(position).getIdIncidencia()));
         holder.titulo.setText(lista_incidencias.get(position).getTitulo());
         holder.urgencia.setText(lista_incidencias.get(position).getUrgencia());
@@ -43,8 +45,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Fragment_Descripcion descripcion = new Fragment_Descripcion();
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutList, descripcion).addToBackStack(null).commit();
 
+                Bundle bundle = new Bundle();
+                bundle.putInt("id_incidencia", lista_incidencias.get(position).getIdIncidencia());
+                bundle.putString("titulo_incidencia", lista_incidencias.get(position).getTitulo());
+                bundle.putString("urgencia_incidencia", lista_incidencias.get(position).getUrgencia());
             }
         });
+
     }
 
     @Override

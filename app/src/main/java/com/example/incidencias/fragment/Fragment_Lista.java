@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.incidencias.R;
 import com.example.incidencias.RecyclerViewAdapter;
@@ -38,6 +39,13 @@ public class Fragment_Lista extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager((fListar.getContext())));
 
+        Button btnDel = fListar.findViewById(R.id.btnEliminarRec);
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+            }
+        });
         return fListar;
     }
 }
