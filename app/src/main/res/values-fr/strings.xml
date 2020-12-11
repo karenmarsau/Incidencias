@@ -45,9 +45,11 @@
 
     <!--Description-->
     <string name="desc_bar">La description</string>
-    <string name="desc_tittle">Titre</string>
-    <string name="desc_date">Date</string>
-    <string name="desc_info">Description</string>
+    <string name="desc_tittle">Titre:</string>
+    <string name="desc_date">Date:</string>
+    <string name="desc_info">Description:</string>
+    <string name="desc_estado">Urgence:</string>
+
 
 
 </resources>

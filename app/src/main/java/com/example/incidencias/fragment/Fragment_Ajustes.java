@@ -22,8 +22,7 @@ import com.example.incidencias.R;
 import java.util.Locale;
 
 public class Fragment_Ajustes extends Fragment {
-    private Locale myLocale;
-    protected static SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferences;
 
     public Fragment_Ajustes() {
         // Required empty public constructor
@@ -34,7 +33,7 @@ public class Fragment_Ajustes extends Fragment {
                              Bundle savedInstanceState) {
         View fAjustes = inflater.inflate(R.layout.fragment_ajustes, container, false);
 
-        sharedPreferences = getContext().getSharedPreferences("APP_SETTINGS", Context.MODE_PRIVATE);
+        sharedPreferences = getContext().getSharedPreferences("userPreferences<", Context.MODE_PRIVATE);
 
         ImageButton imageButtonEspanol = fAjustes.findViewById(R.id.imageButtonEspanol);
         imageButtonEspanol.setOnClickListener(new View.OnClickListener() {
@@ -60,10 +59,8 @@ public class Fragment_Ajustes extends Fragment {
         Button deleteAll = fAjustes.findViewById(R.id.btnDeleteAll);
         deleteAll.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                sharedPreferences.edit().remove("language").commit();
-                sharedPreferences.edit().remove("save_user").commit();
-                sharedPreferences.edit().remove("user_name").commit();
-                sharedPreferences.edit().remove("user_password").commit();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("language").remove("save_user").remove("user_name").remove("user_password").commit();
                 refresh();
             }
         });
@@ -74,6 +71,7 @@ public class Fragment_Ajustes extends Fragment {
     public void changeLanguage(String language){
         Configuration config = new Configuration(getResources().getConfiguration());
         config.locale = new Locale(language);
+        sharedPreferences.edit().putString("Language",language).commit();
 
         switch (language) {
             case "es":
@@ -86,6 +84,8 @@ public class Fragment_Ajustes extends Fragment {
                 config.locale = Locale.FRENCH;
                 break;
         }
+
+
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
         refresh();
     }
@@ -95,11 +95,10 @@ public class Fragment_Ajustes extends Fragment {
         Intent intent = new Intent(getContext(), Login.class);
         startActivity(intent);
 
-        Fragment fragmentSettings = new Fragment_Ajustes();
-
+        Fragment fragmentAjustes = new Fragment_Ajustes();
         FragmentManager menuManager = getFragmentManager();
         FragmentTransaction menuTransaction = menuManager.beginTransaction();
-        menuTransaction.replace(R.id.mainFragment, fragmentSettings).commit();
+        menuTransaction.replace(R.id.mainFragment, fragmentAjustes).commit();
     }
 
 }

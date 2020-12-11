@@ -30,6 +30,8 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
     }
 
     //ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
+    EditText editTextTitulo;
+    Spinner spinner;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,9 +39,9 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
         // Inflate the layout for this fragment
         View fAnadir = inflater.inflate(R.layout.fragment_anadir, container, false);
 
-        final EditText editTextTitulo = fAnadir.findViewById(R.id.EdtTitulo);
+        editTextTitulo = fAnadir.findViewById(R.id.EdtTitulo);
 
-        final Spinner spinner = fAnadir.findViewById(R.id.spinnerUrgencia);
+        spinner = fAnadir.findViewById(R.id.spinnerUrgencia);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getContext(),R.array.urgencia, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -83,7 +85,7 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
     @Override

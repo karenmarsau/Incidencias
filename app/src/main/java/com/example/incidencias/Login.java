@@ -16,22 +16,28 @@ import android.widget.TextView;
 import java.util.Locale;
 
 public class Login extends AppCompatActivity {
+    EditText txtUserName;
+    EditText txtPassword;
+    Button btnLogin;
+    TextView resultado;
+
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        txtUserName = (EditText)findViewById(R.id.txtUser);
+        txtPassword = findViewById(R.id.txtPass);
+        btnLogin = findViewById(R.id.btnLogin);
+        resultado = findViewById(R.id.txtResultado);
 
-        final EditText txtUserName = findViewById(R.id.txtUser);
-        final EditText txtPassword = findViewById(R.id.txtPass);
-        final Button btnLogin = findViewById(R.id.btnLogin);
-        final TextView resultado = findViewById(R.id.txtResultado);
+        sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
 
-        final SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
         Configuration configuration = new Configuration(getResources().getConfiguration());
-
-        configuration.locale = new Locale(sharedPreferences.getString("language", "es"));
+        configuration.locale = new Locale(sharedPreferences.getString("Language", "es"));
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
 
         if (sharedPreferences.getBoolean("save_user", false)) {
@@ -50,9 +56,11 @@ public class Login extends AppCompatActivity {
 
                 if(txtUser.equals("admin") && txtPass.equals("admin")){
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("user_name", txtUser).commit();
-                    editor.putString("user_password", txtPass).commit();
-                    editor.putBoolean("save_user", true).commit();
+                    editor.putString("user_name", txtUser);
+                    editor.putString("user_password", txtPass);
+                    editor.putBoolean("save_user", true);
+                    editor.commit();
+
                     resultado.setText("Login OK");
                     goToMenu();
                 }else{

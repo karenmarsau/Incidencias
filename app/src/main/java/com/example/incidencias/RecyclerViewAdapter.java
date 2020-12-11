@@ -41,10 +41,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity)v.getContext();
                 Fragment_Descripcion descripcion = new Fragment_Descripcion();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutList).addToBackStack();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutList, descripcion).addToBackStack(null).commit();
+
             }
         });
-
     }
 
     @Override

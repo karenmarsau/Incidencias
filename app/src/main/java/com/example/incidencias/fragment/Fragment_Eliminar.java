@@ -28,6 +28,9 @@ public class Fragment_Eliminar extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        dbHelper = new IncidenciaDBHelper(getContext());
+        db = dbHelper.getWritableDatabase();
+
         View fEliminar = inflater.inflate(R.layout.fragment_eliminar, container, false);
         final EditText editTextID = fEliminar.findViewById(R.id.edtId);
 

@@ -23,8 +23,20 @@
             app:layout_constraintTop_toBottomOf="@+id/txtBackground">
 
             <TextView
+                android:id="@+id/txtStatusList"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/manjari_regular"
+                android:gravity="center"
+                android:text="@string/list_status"
+                android:textColor="@color/c7"
+                android:textSize="18sp" />
+
+            <TextView
                 android:id="@+id/txtIdList"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/manjari_regular"
@@ -35,7 +47,7 @@
 
             <TextView
                 android:id="@+id/txtTittleList"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/manjari_regular"
@@ -56,15 +68,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/txtStatusList"
+                android:id="@+id/textView4"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/manjari_regular"
-                android:gravity="center"
-                android:text="@string/list_status"
-                android:textColor="@color/c7"
-                android:textSize="18sp" />
+                android:layout_weight="1" />
 
         </LinearLayout>
 
