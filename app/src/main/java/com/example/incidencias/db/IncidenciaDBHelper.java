@@ -19,7 +19,11 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + IncidenciaEntry.TABLE_NAME + "(" +
             IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            IncidenciaEntry.COLUMN_NAME_TITLE + " TEXT," + IncidenciaEntry.COLUMN_NAME_PRIORITY + " TEXT)";
+            IncidenciaEntry.COLUMN_NAME_TITLE + " TEXT," +
+            IncidenciaEntry.COLUMN_NAME_PRIORITY + " TEXT, " +
+            IncidenciaEntry.COLUMN_NAME_STATUS + " TEXT," +
+            IncidenciaEntry.COLUMN_NAME_DATE + " TEXT, " +
+            IncidenciaEntry.COLUMN_NAME_DESCRIPTION + " TEXT);";
 
     public IncidenciaDBHelper(@Nullable Context context) {
         super(context,"incidencias.db", null, 1);
@@ -48,7 +52,12 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
             do {
                 inci = new Incidencia(cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_TITLE)),
                                     cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_PRIORITY)),
-                                    cursor.getInt(cursor.getColumnIndex(IncidenciaEntry.ID)));
+                                    cursor.getInt(cursor.getColumnIndex(IncidenciaEntry.ID)),
+                                    cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_STATUS)),
+                                    cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_DATE)),
+                                    cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_DESCRIPTION)));
+
+
                 issueArrayList.add(inci);
             } while(cursor.moveToNext());
         }
@@ -65,6 +74,10 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
             //Insert the incidence getting all values
             values.put(IncidenciaEntry.COLUMN_NAME_TITLE, nuevaIncidencia.getTitulo());
             values.put(IncidenciaEntry.COLUMN_NAME_PRIORITY, nuevaIncidencia.getUrgencia());
+            values.put(IncidenciaEntry.COLUMN_NAME_STATUS, nuevaIncidencia.getEstado());
+            values.put(IncidenciaEntry.COLUMN_NAME_DATE, nuevaIncidencia.getDate());
+            values.put(IncidenciaEntry.COLUMN_NAME_DESCRIPTION, nuevaIncidencia.getDescripcion());
+
 
             try{
                 db.insert(IncidenciaEntry.TABLE_NAME, null, values);
@@ -100,4 +113,26 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+    public void updateStatusIncidence(SQLiteDatabase db, String status, int incidenceId){
+        db.execSQL("UPDATE " + IncidenciaEntry.TABLE_NAME + "SET " + IncidenciaEntry.COLUMN_NAME_STATUS +
+                " = " + status + " WHERE " + IncidenciaEntry.ID + " = " + incidenceId);
+    }
+
+    public Incidencia getIncidenceById(SQLiteDatabase db, int incidenceId){
+        Cursor cursor = db.rawQuery("SELECT * FROM " + IncidenciaEntry.TABLE_NAME + " WHERE " + IncidenciaEntry.ID + " = " + incidenceId, null);
+
+        Incidencia incidencia = new Incidencia(cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_TITLE)),
+                cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_PRIORITY)),
+                cursor.getInt(cursor.getColumnIndex(IncidenciaEntry.ID)),
+                cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_STATUS)),
+                cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_DATE)),
+                cursor.getString(cursor.getColumnIndex(IncidenciaEntry.COLUMN_NAME_DESCRIPTION)));
+
+        cursor.close();
+
+        return incidencia;
+
+    }
+
 }

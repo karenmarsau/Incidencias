@@ -50,6 +50,12 @@
     <string name="desc_info">Description:</string>
     <string name="desc_estado">Urgence:</string>
 
+    <!--Status-->
+    <string name = "status_pen">En attente</string>
+    <string name = "status_assigned">Attribué</string>
+    <string name = "status_resolved">Résolu</string>
+
+
 
 
 </resources>

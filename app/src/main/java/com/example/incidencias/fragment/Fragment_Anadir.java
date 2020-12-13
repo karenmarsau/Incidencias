@@ -22,6 +22,9 @@ import com.example.incidencias.Menu;
 import com.example.incidencias.R;
 import com.example.incidencias.db.IncidenciaDBHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -31,6 +34,7 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
 
     //ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
     EditText editTextTitulo;
+    EditText editTextDescripcion;
     Spinner spinner;
 
     @Override
@@ -61,10 +65,15 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
                     toast.show();
                 }else{
                     Incidencia nuevaIncidencia = new Incidencia(EdtTitulo, SpinnerUrgencia);
+
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                    nuevaIncidencia.setDate(sdf.format(new Date()));
+
                     //incidencias.add(nuevaIncidencia);
 
                     IncidenciaDBHelper dbHelper = ((Menu)getActivity()).dbHelper;
                     SQLiteDatabase db = ((Menu)getActivity()).db;
+
                     dbHelper.insertIncidencia(db, nuevaIncidencia);
 
                     Log.i("Click!!!", EdtTitulo+"--"+SpinnerUrgencia);

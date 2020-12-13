@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageButtonStatus"
+            android:id="@+id/imageStatus"
             android:layout_width="40dp"
             android:layout_height="23dp"
             android:layout_weight="1"

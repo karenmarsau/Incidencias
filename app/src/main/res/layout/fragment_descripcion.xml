@@ -166,7 +166,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnEstado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="155dp"
@@ -177,7 +177,7 @@
             android:background="@drawable/mybutton"
             android:fontFamily="@font/manjari_bold"
             android:gravity="center"
-            android:text="@string/desc_asignado"
+            android:text="@string/status_pen"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

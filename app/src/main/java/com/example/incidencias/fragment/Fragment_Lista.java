@@ -39,13 +39,6 @@ public class Fragment_Lista extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager((fListar.getContext())));
 
-        Button btnDel = fListar.findViewById(R.id.btnEliminarRec);
-        btnDel.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-            }
-        });
         return fListar;
     }
 }

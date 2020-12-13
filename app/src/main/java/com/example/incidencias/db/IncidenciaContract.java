@@ -9,6 +9,8 @@ public class IncidenciaContract {
         public static final String ID = "id";
         public static final String COLUMN_NAME_TITLE = "title";
         public static final String COLUMN_NAME_PRIORITY = "priority";
-
+        public static final String COLUMN_NAME_STATUS = "status";
+        public static final String COLUMN_NAME_DATE = "date";
+        public static final String COLUMN_NAME_DESCRIPTION = "description";
     }
 }

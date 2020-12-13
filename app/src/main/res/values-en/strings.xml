@@ -49,4 +49,9 @@
     <string name="desc_info">Description:</string>
     <string name="desc_estado">Priority:</string>
 
+    <!--Status-->
+    <string name = "status_pen">Pending</string>
+    <string name = "status_assigned">Assigned</string>
+    <string name = "status_resolved">Resolved</string>
+
 </resources>
