@@ -44,6 +44,7 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
         View fAnadir = inflater.inflate(R.layout.fragment_anadir, container, false);
 
         editTextTitulo = fAnadir.findViewById(R.id.EdtTitulo);
+        editTextDescripcion = fAnadir.findViewById(R.id.edtDescripcion);
 
         spinner = fAnadir.findViewById(R.id.spinnerUrgencia);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getContext(),R.array.urgencia, android.R.layout.simple_spinner_item);
@@ -56,18 +57,27 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                String EdtTitulo = editTextTitulo.getText().toString();
+                String edtTitulo = editTextTitulo.getText().toString();
+                String edtDesc = editTextDescripcion.getText().toString();
                 String SpinnerUrgencia = spinner.getSelectedItem().toString();
+                String estado = "Pendiente";
 
-                if(EdtTitulo.equals("") || (SpinnerUrgencia.equals(""))){
+
+                if(edtTitulo.equals("") || (SpinnerUrgencia.equals(""))){
                     Toast toast = Toast.makeText(getActivity(),"ERROR, campo vacio.",Toast.LENGTH_SHORT);
                     toast.setMargin(1000,500);
                     toast.show();
                 }else{
-                    Incidencia nuevaIncidencia = new Incidencia(EdtTitulo, SpinnerUrgencia);
+                    Incidencia nuevaIncidencia = new Incidencia(edtTitulo, SpinnerUrgencia);
 
                     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                     nuevaIncidencia.setDate(sdf.format(new Date()));
+
+                    nuevaIncidencia.setDescripcion(edtDesc);
+
+                    nuevaIncidencia.setEstado(estado);
+
+
 
                     //incidencias.add(nuevaIncidencia);
 
@@ -76,7 +86,7 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
 
                     dbHelper.insertIncidencia(db, nuevaIncidencia);
 
-                    Log.i("Click!!!", EdtTitulo+"--"+SpinnerUrgencia);
+                    Log.i("Click!!!", edtTitulo+"--"+SpinnerUrgencia);
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     builder.setTitle("Creación de Incidencia").setMessage("Su incidencia ha sido registrada.");

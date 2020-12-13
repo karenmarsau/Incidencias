@@ -33,7 +33,7 @@ public class Fragment_Ajustes extends Fragment {
                              Bundle savedInstanceState) {
         View fAjustes = inflater.inflate(R.layout.fragment_ajustes, container, false);
 
-        sharedPreferences = getContext().getSharedPreferences("userPreferences<", Context.MODE_PRIVATE);
+        sharedPreferences = getContext().getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
 
         ImageButton imageButtonEspanol = fAjustes.findViewById(R.id.imageButtonEspanol);
         imageButtonEspanol.setOnClickListener(new View.OnClickListener() {
@@ -94,11 +94,6 @@ public class Fragment_Ajustes extends Fragment {
     public void refresh(){
         Intent intent = new Intent(getContext(), Login.class);
         startActivity(intent);
-
-        Fragment fragmentAjustes = new Fragment_Ajustes();
-        FragmentManager menuManager = getFragmentManager();
-        FragmentTransaction menuTransaction = menuManager.beginTransaction();
-        menuTransaction.replace(R.id.mainFragment, fragmentAjustes).commit();
     }
 
 }

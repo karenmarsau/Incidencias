@@ -115,8 +115,8 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
     }
 
     public void updateStatusIncidence(SQLiteDatabase db, String status, int incidenceId){
-        db.execSQL("UPDATE " + IncidenciaEntry.TABLE_NAME + "SET " + IncidenciaEntry.COLUMN_NAME_STATUS +
-                " = " + status + " WHERE " + IncidenciaEntry.ID + " = " + incidenceId);
+        db.execSQL("UPDATE " + IncidenciaEntry.TABLE_NAME + " SET " + IncidenciaEntry.COLUMN_NAME_STATUS +
+                " = '" + status + "' WHERE " + IncidenciaEntry.ID + " = " + incidenceId);
     }
 
     public Incidencia getIncidenceById(SQLiteDatabase db, int incidenceId){

@@ -26,7 +26,7 @@ public class Fragment_Descripcion extends Fragment {
     private Button btnEstado;
     public IncidenciaDBHelper dbHelper;
     public SQLiteDatabase db;
-
+    private String estado;
 
 
     public Fragment_Descripcion() {
@@ -47,12 +47,25 @@ public class Fragment_Descripcion extends Fragment {
         txtDescripcion = fDescripcion.findViewById(R.id.txtDescD);
         btnEstado = fDescripcion.findViewById(R.id.btnEstado);
 
-        final int id = Integer.parseInt(getArguments().getString("id_incidencia"));
+
+
+        final int id = getArguments().getInt("id_incidencia");
         String titulo = getArguments().getString("titulo_incidencia");
         String fecha = getArguments().getString("fecha_incidencia");
         String urgencia = getArguments().getString("urgencia_incidencia");
-        String estado = getArguments().getString("estado_incidencia");
+        estado = getArguments().getString("estado_incidencia");
         String descripcion = getArguments().getString("desc_incidencia");
+
+        if("Pendiente".equals(estado)) {
+            btnEstado.setText(R.string.status_pen);
+        } else if("Asignada".equals(estado)) {
+            btnEstado.setText(R.string.status_assigned);
+            btnEstado.setBackgroundResource(R.drawable.status_orange);
+        } else if("Resuelta".equals(estado)) {
+            btnEstado.setText(R.string.status_resolved);
+            btnEstado.setBackgroundResource(R.drawable.status_green);
+        }
+
 
         txtTitulo.setText(titulo);
         txtFecha.setText(fecha);
@@ -62,20 +75,8 @@ public class Fragment_Descripcion extends Fragment {
         btnEstado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String status = "Pendiente";
 
-                if(status.equals("Pendiente")){
-                    status="Asignada";
-                    dbHelper.updateStatusIncidence(db, "Pendiente", id);
-                    btnEstado.setText(status);
-                    btnEstado.setBackgroundColor(Color.parseColor("#990808"));
-                }else if(status.equals("Asignada")){
-                    dbHelper.updateStatusIncidence(db, "Asignada", id);
-                    status="Resuelta";
-                }else if(status.equals("Resuelta")){
-                    dbHelper.updateStatusIncidence(db, "Resuelta", id);
-                    status="Pendiente";
-                }
+               updateStatus(id);
             }
         });
 
@@ -83,5 +84,24 @@ public class Fragment_Descripcion extends Fragment {
 
 
         return fDescripcion;
+    }
+
+    private void updateStatus(int id) {
+        if(estado.equals("Pendiente")){
+            estado="Asignada";
+            dbHelper.updateStatusIncidence(db, estado, id);
+            btnEstado.setBackgroundResource(R.drawable.status_orange);
+            btnEstado.setText(getString(R.string.status_assigned));
+        }else if(estado.equals("Asignada")){
+            estado="Resuelta";
+            dbHelper.updateStatusIncidence(db, estado, id);
+            btnEstado.setText(getString(R.string.status_resolved));
+            btnEstado.setBackgroundResource(R.drawable.status_green);
+        }else if(estado.equals("Resuelta")){
+            estado="Pendiente";
+            dbHelper.updateStatusIncidence(db, estado, id);
+            btnEstado.setText(getString(R.string.status_pen));
+            btnEstado.setBackgroundResource(R.drawable.status_red);
+        }
     }
 }

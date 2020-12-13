@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -45,7 +46,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.id.setText(String.valueOf(lista_incidencias.get(position).getIdIncidencia()));
         holder.titulo.setText(lista_incidencias.get(position).getTitulo());
         holder.urgencia.setText(lista_incidencias.get(position).getUrgencia());
-        //holder.status.
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -94,20 +94,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             button = itemView.findViewById(R.id.btnEliminarRec);
             imageEstado = itemView.findViewById(R.id.imageStatus);
 
+            status = lista_incidencias.get(count).getEstado();
+            if("Asignada".equals(status)) {
+                imageEstado.setImageResource(R.drawable.orange_dot);
+            } else if("Resuelta".equals(status)) {
+                imageEstado.setImageResource(R.drawable.green_dot);
+            }
+
             idDel = lista_incidencias.get(count).getIdIncidencia();
 
 
             dbHelper = new IncidenciaDBHelper(itemView.getContext());
             db = dbHelper.getWritableDatabase();
-
-//            imageEstado.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    String status;
-//
-//
-//                }
-//            });
 
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -128,9 +126,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
 
-
-
             count++;
         }
+
     }
 }
