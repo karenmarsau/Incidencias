@@ -77,8 +77,6 @@ public class Fragment_Anadir extends Fragment implements AdapterView.OnItemSelec
 
                     nuevaIncidencia.setEstado(estado);
 
-
-
                     //incidencias.add(nuevaIncidencia);
 
                     IncidenciaDBHelper dbHelper = ((Menu)getActivity()).dbHelper;
